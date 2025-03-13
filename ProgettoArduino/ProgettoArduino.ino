@@ -1,21 +1,25 @@
-int xAxisPin = 0; // define X pin of Joystick
-int yAxisPin = 1; // define Y pin of Joystick
+int xAxisPin = 0; //  X pin Joystick
+int yAxisPin = 1; // pin y joystick
+
 typedef struct {
   int x;
   int y;
 } Joystick;
+
 void setup() {
-pinMode(zAxisPin, INPUT_PULLUP); // initialize the port to pull-up input
-Serial.begin(9600); // initialize the serial port with baud rate 9600
+  Serial.begin(9600); // inizializzo seriale
 }
 
 void loop() {
- Joystick joystick;
-  joystick.x = analogRead(xAxisPin); // read the X value
-  joystick.y= analogRead(yAxisPin); // read the Y value
+  Joystick joystick;
+  joystick.x = analogRead(xAxisPin); // leggo x 
+  joystick.y = analogRead(yAxisPin); //leggo y
 
-  Serial.print("{("X" : joystick.x, "Y" : joystick.y)}");
+  Serial.print("{ \"X\" : "); //stampo 
+  Serial.print(joystick.x);
+  Serial.print(", \"Y\" : ");
+  Serial.print(joystick.y);
+  Serial.println(" }");
 
   delay(200);
-
 }

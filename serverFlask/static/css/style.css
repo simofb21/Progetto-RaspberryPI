@@ -4,10 +4,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff5a;
 }
 
 canvas {
     background-color: #00034a;
-    border: 1rem solid #d4ff00;
-}   
+}  
