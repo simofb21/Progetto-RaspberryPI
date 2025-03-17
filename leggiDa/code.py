@@ -11,8 +11,8 @@ ser = serial.Serial(
 
 url = "http://192.168.1.12:5000/update_position"  # da cambiare con ip raspberry a scuola
 
-print("Listening for messages from ARDUINO...")
-
+print("i am currently listening your messages")
+    
 def send_position(x, y):
     """
     Invio la posizione (x, y) al server Flask.
