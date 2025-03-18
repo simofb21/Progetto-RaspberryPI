@@ -36,7 +36,7 @@ Le coordinate dei movimenti dei Joystick vengono mandate ad un RaspberryPi. Un a
 | Fase                  | Data di Inizio  | Data di Fine  | Stato        |
 |-----------------------|----------------|---------------|--------------|
 | [Fase 1: Analisi]     | [lun 10/03/2025]         | [lun 17/03/2025]        | [In corso] |
-| [Fase 2: Sviluppo]    | [Data]         | [Data]        | [Completata/In Corso] |
+| [Fase 2: Sviluppo]    | [mar 18/03/2025]         | [Data]        | [Completata] |
 | [Fase 3: Test]        | [Data]         | [Data]        | [Completata/In Corso] |
 | [Fase 4: Consegna]    | [Data]         | [Data]        | [Completata/In Corso] |
 
