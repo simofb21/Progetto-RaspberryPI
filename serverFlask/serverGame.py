@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-current_position = {"x": None, "y": None}
+current_position = {"x": 0, "y": 0}
 
 @app.route('/')
-def home():
+def home(): 
     return render_template('index.html')
 
 @app.route('/update_position', methods=['POST'])
