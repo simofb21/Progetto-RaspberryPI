@@ -1,15 +1,12 @@
+'''
+Codice che : legge da bluetooth i dati del joystick e li manda al server via post
+'''
 import serial
+import time
 import requests
 import json
-# lo usiamo da windows
-#codice che funziona in questo modo : comunicazione via seriale tra arduino e pc , e pc comunica con raspberry via post
-# quindi il pc legge i dati da arduino e li manda al raspberry via post
-
-ser = serial.Serial(
-    port='COM5',  #così è da pc , sarebbe da cambiare con la porta seriale del raspberry
-    baudrate=9600,        
-    timeout=1            
-)
+# Per windows
+ser = serial.Serial('COM5', 38400, timeout=1) #uso 38400 perche è la velocità di baudrate del modulo bluetooth hc-05 : bisogna verificare se la porta usata è quella corretta
 
 url = "http://10.0.97.207:5000/update_position"  # da cambiare con ip raspberry a scuola
 
@@ -38,7 +35,10 @@ try:
     while True:
         if ser.in_waiting > 0:
             data = ser.readline().decode('utf-8').strip()
-            print(f"Received: {data}")
+            if(data):
+                print(f"Received: {data}")
+            else:
+                print("No data received")
             #legge da seriale e stampa a video 
             try:
                 position = json.loads(data) #se ha ricevuto una x e una y ...

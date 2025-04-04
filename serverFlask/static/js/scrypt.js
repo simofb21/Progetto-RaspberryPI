@@ -57,19 +57,19 @@ async function getPositionJoystick() { //ottengo dal joystick
         if (!response.ok) {
             throw new Error('Errore nella richiesta: ' + response.status);
         }
-        const data = await response.json(); // converto     la risposta in JSON
+        const data = await response.json(); // converto la risposta in JSON
         
-        // Logica per determinare il movimento in base ai valori di x e y
+
         if (data.x >= 500 && data.x <= 600 && data.y >= 500 && data.y <= 600) {
-            // Stai fermo
+             // tai fermo
         } else if (data.y <= 100) {
-            y -= snakeSize; // Vai su
+            y -= snakeSize; // vai su
         } else if (data.y >= 900) {
-            y += snakeSize; // Vai giù
+            y += snakeSize; // vai giù
         } else if (data.x >= 800) {
-            x += snakeSize; // Vai avanti
+            x += snakeSize; // vai avanti
         } else if (data.x <= 100) {
-            x -= snakeSize; // Vai indietro
+            x -= snakeSize; // vai indietro
         }
 
         joystick = true;
@@ -94,7 +94,7 @@ function drawEnemies() {
 function moveSnake() {
     if (joystick)
         getPositionJoystick();
-    //altrimenti premendo da tastiera userà wasd 
+    //altrimenti premendo da tastiera userà wasd  . la funzione getPositionWasd viene chiamata quando avviene l' evento
     if (x < 0) x = canvas.width - snakeSize;
     if (x >= canvas.width) x = 0;
     if (y < 0) y = canvas.height - snakeSize;
@@ -132,7 +132,6 @@ function checkCollision() {
             x + snakeSize > nemico.x &&
             y < nemico.y + nemico.size &&
             y + snakeSize > nemico.y) {
-            // Collisione rilevata
             gameOver = true;
         }
     });
@@ -144,8 +143,8 @@ function gameLoop() {
     moveSnake();
     console.log(x, y);
     drawSnake();
-    drawEnemies();
     moveEnemies();
+    drawEnemies();
     checkCollision();
 }
 
