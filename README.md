@@ -57,12 +57,14 @@ Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funzi
        3. requests
        4. json
        5. aggiornare con librerie bluetooth
+    
 -**Budget**:
 Il budget dipende da quanti componenti opzionali si desideri utilizzare . Supponiamo di avere già un PC a nostra disposizione però : 
 Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ per RaspberrryPI,10€ per adattatore HC05
 - **Personale Coinvolto**: Sono state coinvolte tutte le persone del gruppo e anche il professor Alessandro Della Torre
 - **Tutorial**:
   E' possibile giocare online alla versione che funziona solo da tastiera al seguente link : https://fb-bike.it/game3/templates/index.html
+  
   Se invece si desidera giocare alla versione normale effettuare i seguenti passaggi :
  1. Scaricare ZIP del file
  2. Caricare lo sketch di ProgettoArduino sul microcontrollore
