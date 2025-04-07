@@ -16,14 +16,14 @@ try:
             try:
                 data = ser.readline().decode('utf-8').strip()
                 if data:  # Verifica se la stringa ricevuta non è vuota
-                    print(f"Received: {data}")
-                    # Decodifica la stringa JSON
+                    print(f"Received: {data}")#stampa stringa ricevuta dal seriale
+                    # decodifica la stringa JSON
                     try:
                         position = json.loads(data)
                         if "X" in position and "Y" in position:
                             x = position["X"]
                             y = position["Y"]
-                            print(f"Position: X={x}, Y={y}")  # Stampa la posizione x,y letta dal joystick
+                            print(f"Position: X={x}, Y={y}")  # stampa la posizione x,y letta dal joystick in json
                         else:
                             print(f"Invalid data format: {data}")
                     except json.JSONDecodeError:

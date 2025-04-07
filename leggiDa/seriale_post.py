@@ -45,7 +45,7 @@ try:
                 if "X" in position and "Y" in position:
                     x = position["X"]
                     y = position["Y"]
-                    send_position(x, y)  # invia al server la posizione x,y che ho letto dal joystick via seriale
+                    send_position(x, y)  # mette in json i dati e li invia al server
                 else:
                     print(f"Invalid data format: {data}")
             except json.JSONDecodeError:

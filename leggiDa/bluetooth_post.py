@@ -4,26 +4,26 @@ import json
 
 # Configura la porta seriale
 ser = serial.Serial(
-    port='COM5',  # Sostituisci con la porta corretta
+    port='COM5', #tenere com 5 e collegare sulla prima porta del pc
     baudrate=9600,        
     timeout=1            
 )
 
-url = "http://192.168.1.12:5000/update_position"  # Sostituisci con l'URL corretto del tuo server Flask
-
+url = "http://10.0.98.30:5000//update_position"  # da sostituire con url server 
+    
 print("Listening for messages from ARDUINO...")
 
 def send_position(x, y):
     """
-    Invia la posizione (x, y) al server Flask.
+    invia la posizione (x, y) al server Flask.
     """
     data = {
         "x": x,
         "y": y
     }
     try:
-        response = requests.post(url, json=data)
-        if response.status_code == 204:
+        response = requests.post(url, json=data) #fa la post al server con i dati x e y
+        if response.status_code == 204: 
             print("Posizione aggiornata con successo")
         else:
             print(f"Errore: {response.status_code}")
@@ -37,15 +37,15 @@ try:
         if ser.in_waiting > 0:
             try:
                 data = ser.readline().decode('utf-8').strip()
-                if data:  # Verifica se la stringa ricevuta non è vuota
-                    print(f"Received: {data}")
-                    # Decodifica la stringa JSON e invia la richiesta al server
+                if data:  # verifica se la stringa ricevuta non è vuota
+                    print(f"Received: {data}") #ati ricevuti dal seriale
+                  
                     try:
                         position = json.loads(data)
                         if "X" in position and "Y" in position:
                             x = position["X"]
                             y = position["Y"]
-                            send_position(x, y)  # Invia al server la posizione x,y che ho letto dal joystick via seriale
+                            send_position(x, y) #mette in json i dati e li invia al server
                         else:
                             print(f"Invalid data format: {data}")
                     except json.JSONDecodeError:

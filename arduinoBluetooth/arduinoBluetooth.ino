@@ -10,8 +10,8 @@ int xAxisPin = 0; // X pin Joystick
 int yAxisPin = 1; // Y pin Joystick
 
 void setup() {
-    Serial.begin(9600);
-    BTserial.begin(38400); 
+    Serial.begin(9600); //inizializzo comunicazione seriale 
+    BTserial.begin(38400); //inizializzo comunicazione bluetooth
 }
 
 void loop() {
