@@ -10,3 +10,4 @@ una volta testato ciò inviare x,y e poi il codice è già più o meno apposto .
 altra cosa da verificare è problema di usare porta giusta per leggere via serial su pc quindi cambiare se COM5 ecc . attenzione a ciò quindi.
 Utile questa conversazione con chatgpt : 
 https://chatgpt.com/share/67f04ab8-f114-8002-83a4-2b16107c8cd9
+https://youtu.be/ykgt4v7_4y4?si=fmW3DoWYhEo4sgbh on yt

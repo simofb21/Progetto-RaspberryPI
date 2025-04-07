@@ -1,5 +1,4 @@
 import serial
-import requests
 import json
 
 # Configura la porta seriale
@@ -9,28 +8,7 @@ ser = serial.Serial(
     timeout=1            
 )
 
-url = "http://192.168.1.12:5000/update_position"  # Sostituisci con l'URL corretto del tuo server Flask
-
 print("Listening for messages from ARDUINO...")
-
-def send_position(x, y):
-    """
-    Invia la posizione (x, y) al server Flask.
-    """
-    data = {
-        "x": x,
-        "y": y
-    }
-    try:
-        response = requests.post(url, json=data)
-        if response.status_code == 204:
-            print("Posizione aggiornata con successo")
-        else:
-            print(f"Errore: {response.status_code}")
-    except requests.ConnectionError as e:
-        print(f"Connection error: {e}")
-    except requests.Timeout as e:
-        print(f"Request timed out: {e}")
 
 try:
     while True:
@@ -39,13 +17,13 @@ try:
                 data = ser.readline().decode('utf-8').strip()
                 if data:  # Verifica se la stringa ricevuta non è vuota
                     print(f"Received: {data}")
-                    # Decodifica la stringa JSON e invia la richiesta al server
+                    # Decodifica la stringa JSON
                     try:
                         position = json.loads(data)
                         if "X" in position and "Y" in position:
                             x = position["X"]
                             y = position["Y"]
-                            send_position(x, y)  # Invia al server la posizione x,y che ho letto dal joystick via seriale
+                            print(f"Position: X={x}, Y={y}")  # Stampa la posizione x,y letta dal joystick
                         else:
                             print(f"Invalid data format: {data}")
                     except json.JSONDecodeError:
