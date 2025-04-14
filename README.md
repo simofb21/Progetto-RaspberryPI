@@ -7,6 +7,8 @@
 - [Ruoli e Responsabilità](#ruoli-e-responsabilità)
 - [Timeline del Progetto](#timeline-del-progetto)
 - [Risorse](#risorse)
+- [Tutorial](#tutorial)
+- [Immagini e video](#immagini-e-video)
 - [Componenti aggiuntive ](#componenti-aggiuntive)
 - [Risultati Attesi](#risultati-attesi)
 - [Conclusioni](#conclusioni)
@@ -57,12 +59,13 @@ Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funzi
        3. requests
        4. jsonv 
     
--**Budget**:
+- **Budget**:
 Il budget dipende da quanti componenti opzionali si desideri utilizzare . Supponiamo di avere già un PC a nostra disposizione però : 
 Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ per RaspberrryPI,10€ per adattatore HC05
 - **Personale Coinvolto**: Sono state coinvolte tutte le persone del gruppo e anche il professor Alessandro Della Torre
-- **Tutorial**:
 
+ ## Tutorial 
+ 
   E' possibile giocare online alla versione che funziona solo da tastiera al seguente link : https://fb-bike.it/game3/templates/index.html
   
   Per la versione normale , quindi che funziona con Joystick(NB , funziona comunque anche da tastiera)
@@ -74,6 +77,7 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  6. Lanciare sul proprio PC uno dei due file con .._post.py contenuti in leggiDa . A seconda se si usa Bluetooth o Seriale scegliere quello corretto
  7. Visitare la pagina web che ha come indirizzo quello del raspberryPi:5000
  8.  Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
+## Immagini e video
 
 ## Componenti aggiuntive
 Il vantaggio principale del nostro progetto è che funziona in 3 vesioni e questo rende il tutto più interessante perchè permettiamo all' utente di scegliere lui cosa utilizzare. 
