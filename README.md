@@ -1,5 +1,5 @@
 
-# Progetto Aziendale: **SSerpygamebt**
+# Progetto Aziendale: **Geometry flow**
 
 ## Sommario
 - [Obiettivi del Progetto](#obiettivi-del-progetto)
