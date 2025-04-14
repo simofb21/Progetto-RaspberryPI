@@ -76,11 +76,36 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  5. Lanciare sul raspberry PI il file in serverFlask/serverGame.py
  6. Lanciare sul proprio PC uno dei due file con .._post.py contenuti in leggiDa . A seconda se si usa Bluetooth o Seriale scegliere quello corretto
  7. Visitare la pagina web che ha come indirizzo quello del raspberryPi:5000
- 8.  Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
+ 8. Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
+
+graph TD
+    subgraph Arduino
+        A1[Joystick]
+        A2[Modulo Bluetooth]
+        A3[USB Serial]
+    end
+
+    subgraph Raspberry Pi
+        R1[Script Python]
+        R2[Server Flask]
+    end
+
+    subgraph Browser
+        B1[Pagina Web]
+    end
+
+    A1 -->|Input| A2
+    A1 -->|Input| A3
+    A2 -->|Bluetooth| R1
+    A3 -->|Seriale| R1
+    B1 -->|HTTP Request| R2
+    R1 -->|Elaborazione Dati| R2
+    R2 -->|HTTP Response| B1
+
 ## Immagini e video
 ![Foto1](/view/foto1.jpg)
 ![Foto2](/view/foto2.jpg)
-![Video funzionamento](/view/completo/video_funzionamento.mp4)
+![Video funzionamento](/view/video_funzionamento.mp4)
 ## Componenti aggiuntive
 Il vantaggio principale del nostro progetto è che funziona in 3 vesioni e questo rende il tutto più interessante perchè permettiamo all' utente di scegliere lui cosa utilizzare. 
 ## Risultati Attesi
