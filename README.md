@@ -57,7 +57,7 @@ Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funzi
        1. flask --> sul dispositivo che fa da server
        2. serial
        3. requests
-       4. jsonv 
+       4. json
     
 - **Budget**:
 Il budget dipende da quanti componenti opzionali si desideri utilizzare . Supponiamo di avere già un PC a nostra disposizione però : 
