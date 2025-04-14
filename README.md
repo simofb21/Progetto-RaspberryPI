@@ -24,7 +24,7 @@
   4. Comunicazione tra pc e Server Raspberry PI
 
 ## Descrizione del Progetto
-Un arduino legge i dati X,Y del Joystick . E lì invia ad un computer. Attraverso due modi : seriale o Bluetooth. Il computer , dopo averlì letti , lì usa per effettuare una richiesta http post , contente nel payload il valore di X,Y, al server che è realizzato con Flask , in esecuzione sul nostro Raspberry PI. Il server mostra una pagina web contenente un minigioco in Javascript , in cui un blocco verde deve schivare dei blocchi nemici che si muovono in maniera randomica. 
+Un arduino legge i dati X,Y del Joystick . E lì invia ad un computer. Attraverso due modi : seriale o Bluetooth. Seriale usa direttamente i cavi, bluetooth usa un adattatore HC-05. Il computer , dopo averlì letti , lì usa per effettuare una richiesta http post , contente nel payload il valore di X,Y, al server che è realizzato con Flask , in esecuzione sul nostro Raspberry PI. Il server mostra una pagina web contenente un minigioco in Javascript , in cui un blocco verde deve schivare dei blocchi nemici che si muovono in maniera randomica. 
 Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funziona anche se si preme sulla tastiera WASD . 
 ## Ruoli e Responsabilità
 | Nome                  | Ruolo                     | Responsabilità                           |
@@ -78,29 +78,28 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  7. Visitare la pagina web che ha come indirizzo quello del raspberryPi:5000
  8. Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
 
+### Spiegazione 
 graph TD
     subgraph Arduino
         A1[Joystick]
-        A2[Modulo Bluetooth]
-        A3[USB Serial]
+        A2a[Sketch con invio seriale]
+        A2b[Sketch con invio Bluetooth (HC-05)]
     end
 
-    subgraph Raspberry Pi
-        R1[Script Python]
-        R2[Server Flask]
+    subgraph PC
+        P1[main.py (leggiDa)]
+        P2a[seriale_post.py]
+        P2b[bluetooth_post.py]
+        P3[HTTP POST con X,Y]
     end
 
-    subgraph Browser
-        B1[Pagina Web]
+    subgraph Raspberry_Pi
+        R1[serverGame.py (Flask)]
+        R2[Gioco JS nel browser]
     end
 
-    A1 -->|Input| A2
-    A1 -->|Input| A3
-    A2 -->|Bluetooth| R1
-    A3 -->|Seriale| R1
-    B1 -->|HTTP Request| R2
-    R1 -->|Elaborazione Dati| R2
-    R2 -->|HTTP Response| B1
+    A1 --> A2a --> P1 --> P2a --> P3 --> R1 --> R2
+    A1 --> A2b --> P1 --> P2b --> P3 --> R1
 
 ## Immagini e video
 ![Foto1](/view/foto1.jpg)
