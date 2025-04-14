@@ -114,4 +114,4 @@ Il risultato atteso è che il quadratino verde riesca a muoversi in base ai dati
 Il progetto finito attualmente funziona. Esso è solo una simulazione , di fatto il giochino è molto banale. 
 
 Però siamo riusciti a fare alcune cose molto interessanti : usare il Bluetooth sull' Arduino , cosa non semplice e che ha richiesto l' utilizzo di un adattatore. Altra cosa interessante è il fatto che ci siano 3 modi di giocare : sfruttando la comunicazione seriale col joystick, sfruttando la comunicazione bluetooth col joystick, direttamente da tastiera con WASD.
-Per il futuro le principali implementazioni da fare sono sul giochino in JS . Al momento è banale, è solo per far vedere che muoviamo qualcosa in base ai dati del joystick . Ma desideriamo ingrandirlo ancora molto.
+Per il futuro le principali implementazioni da fare sono sul giochino in JS . Al momento è banale, è solo per far vedere che muoviamo qualcosa in base ai dati del joystick . Ma desideriamo ingrandirlo ancora molto, inserendo punteggi, tempi di gioco, possibilità di migliorare il personaggio ecc ecc.
