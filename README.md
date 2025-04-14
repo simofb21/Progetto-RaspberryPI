@@ -78,7 +78,9 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  7. Visitare la pagina web che ha come indirizzo quello del raspberryPi:5000
  8.  Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
 ## Immagini e video
-
+![Foto1](/view/foto1.jpg)
+![Foto2](/view/foto2.jpg)
+![Video funzionamento](/view/completo/video_funzionamento.mp4)
 ## Componenti aggiuntive
 Il vantaggio principale del nostro progetto è che funziona in 3 vesioni e questo rende il tutto più interessante perchè permettiamo all' utente di scegliere lui cosa utilizzare. 
 ## Risultati Attesi
