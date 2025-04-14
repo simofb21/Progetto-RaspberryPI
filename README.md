@@ -7,7 +7,7 @@
 - [Ruoli e Responsabilità](#ruoli-e-responsabilità)
 - [Timeline del Progetto](#timeline-del-progetto)
 - [Risorse](#risorse)
-- [Rischi e Mitigazioni](#rischi-e-mitigazioni)
+- [Componenti aggiuntive ](#componenti-aggiuntive)
 - [Risultati Attesi](#risultati-attesi)
 - [Conclusioni](#conclusioni)
 
