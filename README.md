@@ -62,6 +62,13 @@ Il budget dipende da quanti componenti opzionali si desideri utilizzare . Suppon
 Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ per RaspberrryPI,10€ per adattatore HC05
 - **Personale Coinvolto**: Sono state coinvolte tutte le persone del gruppo e anche il professor Alessandro Della Torre
 - **Tutorial**:
+  ![Immagine WhatsApp 2025-04-14 ore 08 37 42_01dda2fc](https://github.com/user-attachments/assets/3a6654a9-2172-483a-bc25-664aa045935a)
+  ![Immagine WhatsApp 2025-04-14 ore 08 37 46_b4871f07](https://github.com/user-attachments/assets/0f5bc26b-4d46-4690-9a18-f4ecaf98f3a3)
+
+  
+  
+
+
   E' possibile giocare online alla versione che funziona solo da tastiera al seguente link : https://fb-bike.it/game3/templates/index.html
   
   Per la versione normale , quindi che funziona con Joystick(NB , funziona comunque anche da tastiera)
