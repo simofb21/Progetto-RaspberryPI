@@ -78,28 +78,53 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  7. Visitare la pagina web che ha come indirizzo quello del raspberryPi:5000
  8. Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
 
-### Spiegazione 
-graph TD
-    subgraph Arduino
-        A1[Joystick]
-        A2a[Sketch con invio seriale]
-        A2b[Sketch con invio Bluetooth (HC-05)]
-    end
+## Spiegazione trasmissione
 
-    subgraph PC
-        P1[main.py (leggiDa)]
-        P2a[seriale_post.py]
-        P2b[bluetooth_post.py]
-        P3[HTTP POST con X,Y]
-    end
+### 1. Joystick via Serial (USB)
 
-    subgraph Raspberry_Pi
-        R1[serverGame.py (Flask)]
-        R2[Gioco JS nel browser]
-    end
+```
+[Joystick]
+     │
+     ▼
+[Arduino]
+     │  (Seriale USB)
+     ▼
+     [PC]
+       │  (POST request)
+       ▼
+[Server su Raspberry Pi]
+       │
+       ▼
+[Gioco Web (JavaScript)]
+```
 
-    A1 --> A2a --> P1 --> P2a --> P3 --> R1 --> R2
-    A1 --> A2b --> P1 --> P2b --> P3 --> R1
+### 2. Joystick via Bluetooth (HC-05)
+
+```
+[Joystick]
+     │
+     ▼
+[Arduino + HC-05]
+     │  (Bluetooth)
+     ▼
+     [PC]
+       │  (POST request)
+       ▼
+[Server su Raspberry Pi]
+       │
+       ▼
+[Gioco Web (JavaScript)]
+```
+
+### 3. Input da Tastiera
+
+```
+[PC + Tastiera]
+       │
+       ▼
+[Gioco Web (JavaScript)]
+```
+
 
 ## Immagini e video
 ![Foto1](/view/foto1.jpg)
