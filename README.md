@@ -15,6 +15,9 @@
 
 ---
 
+## Descrizione del Progetto
+Un arduino legge i dati X,Y del Joystick . E lì invia ad un computer. Attraverso due modi : seriale o Bluetooth. Seriale usa direttamente i cavi, bluetooth usa un adattatore HC-05. Il computer , dopo averlì letti , lì usa per effettuare una richiesta http post , contente nel payload il valore di X,Y, al server che è realizzato con Flask , in esecuzione sul nostro Raspberry PI. Il server mostra una pagina web contenente un minigioco in Javascript , in cui un blocco verde deve schivare dei blocchi nemici che si muovono in maniera randomica. 
+
 ## Obiettivi del Progetto
 - **Obiettivo Principale**: L' obiettivo principale del nostro progetto è  consentire di giocare ad un minigame sia da tastiera ma soprattutto con un joystick.
 - **Obiettivi Specifici**:
@@ -23,8 +26,6 @@
   3. Offrire una pagina web che interagisca con le richieste effettuate dai client
   4. Comunicazione tra pc e Server Raspberry PI
 
-## Descrizione del Progetto
-Un arduino legge i dati X,Y del Joystick . E lì invia ad un computer. Attraverso due modi : seriale o Bluetooth. Seriale usa direttamente i cavi, bluetooth usa un adattatore HC-05. Il computer , dopo averlì letti , lì usa per effettuare una richiesta http post , contente nel payload il valore di X,Y, al server che è realizzato con Flask , in esecuzione sul nostro Raspberry PI. Il server mostra una pagina web contenente un minigioco in Javascript , in cui un blocco verde deve schivare dei blocchi nemici che si muovono in maniera randomica. 
 Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funziona anche se si preme sulla tastiera WASD . 
 ## Ruoli e Responsabilità
 | Nome                  | Ruolo                     | Responsabilità                           |
