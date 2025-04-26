@@ -111,7 +111,7 @@ Il vantaggio principale del nostro progetto è che funziona in 3 vesioni e quest
 Il risultato atteso è che il quadratino verde riesca a muoversi in base ai dati ricevuti dal Joystick o da tastiera.
 ## Funzionalità Future
 - Aggiunta di punteggi e livelli di difficoltà
-- Salvataggio dei risultati in un file o database
+- Salvataggio dei risultati per permettere per esempio agli utenti di conoscere i loro precedenti punteggi ecc...
 - Modalità multiplayer locale
 - Migliorare latenza nel gioco
 - Offrire la possibilità di scegliere tra più versioni di gioco
