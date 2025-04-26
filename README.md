@@ -18,6 +18,28 @@
 ## Descrizione del Progetto
 Un arduino legge i dati X,Y del Joystick . E lì invia ad un computer. Attraverso due modi : seriale o Bluetooth. Seriale usa direttamente i cavi, bluetooth usa un adattatore HC-05. Il computer , dopo averlì letti , lì usa per effettuare una richiesta http post , contente nel payload il valore di X,Y, al server che è realizzato con Flask , in esecuzione sul nostro Raspberry PI. Il server mostra una pagina web contenente un minigioco in Javascript , in cui un blocco verde deve schivare dei blocchi nemici che si muovono in maniera randomica. 
 Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funziona anche se si preme sulla tastiera WASD . 
+## Spiegazione trasmissione
+```
+             [Joystick]                                    [PC (Tastiera)]
+                 │                                                │
+            [Arduino]                                             │
+          ┌──────┴──────┐                                         │
+          │             │                                         │
+(Seriale USB)     (Bluetooth HC-05)                               │
+          │             │                                         │
+          └──────┬──────┘                                         │
+                 │                                                │
+              [PC (riceve da Arduino)]                            │
+                 │                                                │
+         [POST request al Server]                                 │
+                 │                                                │
+     [Server Flask su Raspberry Pi]                               │
+                 │                                                 │
+                 ───────────────────── │ ──────────────────────────                    
+                                       ▼
+                            [Gioco Web (JavaScript)]
+```
+
 
 ## Obiettivi del Progetto
 - **Obiettivo Principale**: L' obiettivo principale del nostro progetto è  consentire di giocare ad un minigame sia da tastiera ma soprattutto con un joystick.
@@ -78,28 +100,6 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  6. Lanciare sul proprio PC uno dei due file con .._post.py contenuti in leggiDa . A seconda se si usa Bluetooth o Seriale scegliere quello corretto
  7. Visitare la pagina web che ha come indirizzo quello del raspberryPi:5000
  8. Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
-
-## Spiegazione trasmissione
-```
-             [Joystick]                                    [PC (Tastiera)]
-                 │                                                │
-            [Arduino]                                             │
-          ┌──────┴──────┐                                         │
-          │             │                                         │
-(Seriale USB)     (Bluetooth HC-05)                               │
-          │             │                                         │
-          └──────┬──────┘                                         │
-                 │                                                │
-              [PC (riceve da Arduino)]                            │
-                 │                                                │
-         [POST request al Server]                                 │
-                 │                                                │
-     [Server Flask su Raspberry Pi]                               │
-                 │                                                 │
-                 ───────────────────── │ ──────────────────────────                    
-                                       ▼
-                            [Gioco Web (JavaScript)]
-```
 
 
 ## Immagini e video
