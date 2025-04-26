@@ -79,19 +79,7 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  8. Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
 
 ## Spiegazione trasmissione
-graph LR
-    A[Joystick] --> B[Arduino]
-    A --> C[PC (Tastiera)]
-    B --> D[PC (riceve da Arduino)]
-    D --> E[POST request al Server]
-    E --> F[Server Flask su Raspberry Pi]
-    F --> G[Gioco Web (JavaScript)]
-    C --> D
-    B --> H[Bluetooth HC-05]
-
-
-
-
+```
              [Joystick]                                    [PC (Tastiera)]
                  │                                                │
             [Arduino]                                             │
@@ -110,6 +98,7 @@ graph LR
                  ───────────────────── │ ──────────────────────────                    
                                        ▼
                             [Gioco Web (JavaScript)]
+```
 
 
 ## Immagini e video
