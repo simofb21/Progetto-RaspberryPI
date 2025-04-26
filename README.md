@@ -80,16 +80,24 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
 
 ## Spiegazione trasmissione
 
-```mermaid
-flowchart TD
-    A1[Joystick] --> A2[Arduino]
-    A2 -->|Seriale USB| A3[PC (riceve da Arduino)]
-    A2 -->|Bluetooth HC-05| A3
-    A3 -->|POST request al Server| A4[Server Flask su Raspberry Pi]
-    A4 --> A5[Gioco Web (JavaScript)]
-    
-    B1[PC (Tastiera)] --> A5
-```
+             [Joystick]                                    [PC (Tastiera)]
+                 │                                                │
+            [Arduino]                                             │
+          ┌──────┴──────┐                                         │
+          │             │                                         │
+(Seriale USB)     (Bluetooth HC-05)                               │
+          │             │                                         │
+          └──────┬──────┘                                         │
+                 │                                                │
+              [PC (riceve da Arduino)]                            │
+                 │                                                │
+         [POST request al Server]                                 │
+                 │                                                │
+     [Server Flask su Raspberry Pi]                               │
+                 │                                                 │
+                 ───────────────────── │ ──────────────────────────                    
+                                       ▼
+                            [Gioco Web (JavaScript)]
 
 
 ## Immagini e video
