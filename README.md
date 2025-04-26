@@ -80,50 +80,26 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
 
 ## Spiegazione trasmissione
 
-### 1. Joystick via Serial (USB)
-
-```
-[Joystick]
-     │
-     ▼
-[Arduino]
-     │  (Seriale USB)
-     ▼
-     [PC]
-       │  (POST request)
-       ▼
-[Server su Raspberry Pi]
-       │
-       ▼
-[Gioco Web (JavaScript)]
-```
-
-### 2. Joystick via Bluetooth (HC-05)
-
-```
-[Joystick]
-     │
-     ▼
-[Arduino + HC-05]
-     │  (Bluetooth)
-     ▼
-     [PC]
-       │  (POST request)
-       ▼
-[Server su Raspberry Pi]
-       │
-       ▼
-[Gioco Web (JavaScript)]
-```
-
-### 3. Input da Tastiera
-
-```
-[PC + Tastiera]
-       │
-       ▼
-[Gioco Web (JavaScript)]
-```
+             [Joystick]
+                 │
+            [Arduino]
+          ┌──────┴──────┐
+          │             │
+(Seriale USB)     (Bluetooth HC-05)
+          │             │
+          └──────┬──────┘
+                 │
+              [PC (riceve da Arduino)]
+                 │
+         [POST request al Server]
+                 │
+     [Server flask in esecuzione sul Raspberry Pi]
+                 │
+          [Gioco Web (JavaScript)]
+Oppure 
+             [PC (tastiera)]
+                 │
+          [Gioco Web (JavaScript)]
 
 
 ## Immagini e video
