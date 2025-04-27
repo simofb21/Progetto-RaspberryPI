@@ -100,7 +100,8 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  6. Lanciare sul proprio PC uno dei due file con .._post.py contenuti in leggiDa . A seconda se si usa Bluetooth o Seriale scegliere quello corretto
  7. Visitare la pagina web che ha come indirizzo quello del raspberryPi:5000
  8. Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
-
+## Spiegazioni codice
+All' inizio di ogni codice c'è un commento che spiega cosa fa quel codice
 
 ## Immagini e video
 ![Foto1](/view/foto1.jpg)
