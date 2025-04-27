@@ -7,11 +7,39 @@
 - [Ruoli e Responsabilità](#ruoli-e-responsabilità)
 - [Timeline del Progetto](#timeline-del-progetto)
 - [Risorse](#risorse)
+- [Tutorial](#tutorial)
+- [Immagini e video](#immagini-e-video)
 - [Componenti aggiuntive ](#componenti-aggiuntive)
 - [Risultati Attesi](#risultati-attesi)
 - [Conclusioni](#conclusioni)
 
 ---
+
+## Descrizione del Progetto
+Un arduino legge i dati X,Y del Joystick . E lì invia ad un computer. Attraverso due modi : seriale o Bluetooth. Seriale usa direttamente i cavi, bluetooth usa un adattatore HC-05. Il computer , dopo averlì letti , lì usa per effettuare una richiesta http post , contente nel payload il valore di X,Y, al server che è realizzato con Flask , in esecuzione sul nostro Raspberry PI. Il server mostra una pagina web contenente un minigioco in Javascript , in cui un blocco verde deve schivare dei blocchi nemici che si muovono in maniera randomica. 
+Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funziona anche se si preme sulla tastiera WASD . 
+## Spiegazione trasmissione
+```
+             [Joystick]                                    [PC (Tastiera)]
+                 │                                                │
+            [Arduino]                                             │
+          ┌──────┴──────┐                                         │
+          │             │                                         │
+(Seriale USB)     (Bluetooth HC-05)                               │
+          │             │                                         │
+          └──────┬──────┘                                         │
+                 │                                                │
+              [PC (riceve da Arduino)]                            │
+                 │                                                │
+         [POST request al Server]                                 │
+                 │                                                │
+     [Server Flask su Raspberry Pi]                               │
+                 │                                                 │
+                 ───────────────────── │ ──────────────────────────                    
+                                       ▼
+                            [Gioco Web (JavaScript)]
+```
+
 
 ## Obiettivi del Progetto
 - **Obiettivo Principale**: L' obiettivo principale del nostro progetto è  consentire di giocare ad un minigame sia da tastiera ma soprattutto con un joystick.
@@ -21,9 +49,6 @@
   3. Offrire una pagina web che interagisca con le richieste effettuate dai client
   4. Comunicazione tra pc e Server Raspberry PI
 
-## Descrizione del Progetto
-Un arduino legge i dati X,Y del Joystick . E lì invia ad un computer. Attraverso due modi : seriale o Bluetooth. Il computer , dopo averlì letti , lì usa per effettuare una richiesta http post , contente nel payload il valore di X,Y, al server che è realizzato con Flask , in esecuzione sul nostro Raspberry PI. Il server mostra una pagina web contenente un minigioco in Javascript , in cui un blocco verde deve schivare dei blocchi nemici che si muovono in maniera randomica. 
-Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funziona anche se si preme sulla tastiera WASD . 
 ## Ruoli e Responsabilità
 | Nome                  | Ruolo                     | Responsabilità                           |
 |-----------------------|---------------------------|--------------------------------------------|
@@ -55,20 +80,15 @@ Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funzi
        1. flask --> sul dispositivo che fa da server
        2. serial
        3. requests
-       4. jsonv 
+       4. json
     
--**Budget**:
+- **Budget**:
 Il budget dipende da quanti componenti opzionali si desideri utilizzare . Supponiamo di avere già un PC a nostra disposizione però : 
 Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ per RaspberrryPI,10€ per adattatore HC05
 - **Personale Coinvolto**: Sono state coinvolte tutte le persone del gruppo e anche il professor Alessandro Della Torre
-- **Tutorial**:
-  ![Immagine WhatsApp 2025-04-14 ore 08 37 42_01dda2fc](https://github.com/user-attachments/assets/3a6654a9-2172-483a-bc25-664aa045935a)
-  ![Immagine WhatsApp 2025-04-14 ore 08 37 46_b4871f07](https://github.com/user-attachments/assets/0f5bc26b-4d46-4690-9a18-f4ecaf98f3a3)
 
-  
-  
-
-
+ ## Tutorial 
+ 
   E' possibile giocare online alla versione che funziona solo da tastiera al seguente link : https://fb-bike.it/game3/templates/index.html
   
   Per la versione normale , quindi che funziona con Joystick(NB , funziona comunque anche da tastiera)
@@ -79,14 +99,26 @@ Verranno spesi circa 40€ per kit Freenove comprendente anche joystick, 80€ p
  5. Lanciare sul raspberry PI il file in serverFlask/serverGame.py
  6. Lanciare sul proprio PC uno dei due file con .._post.py contenuti in leggiDa . A seconda se si usa Bluetooth o Seriale scegliere quello corretto
  7. Visitare la pagina web che ha come indirizzo quello del raspberryPi:5000
- 8.  Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
+ 8. Muovere il Joystick e iniziare a giocare. Vedere come il personaggio si muova in base agli impulsi dati dal Joystick
+## Spiegazioni codice
+All' inizio di ogni codice c'è un commento che spiega cosa fa quel codice
 
+## Immagini e video
+![Foto1](/view/foto1.jpg)
+![Foto2](/view/foto2.jpg)
+![Video funzionamento](/view/video_funzionamento.mp4)
 ## Componenti aggiuntive
 Il vantaggio principale del nostro progetto è che funziona in 3 vesioni e questo rende il tutto più interessante perchè permettiamo all' utente di scegliere lui cosa utilizzare. 
 ## Risultati Attesi
 Il risultato atteso è che il quadratino verde riesca a muoversi in base ai dati ricevuti dal Joystick o da tastiera.
+## Funzionalità Future
+- Aggiunta di punteggi e livelli di difficoltà
+- Salvataggio dei risultati per permettere per esempio agli utenti di conoscere i loro precedenti punteggi ecc...
+- Modalità multiplayer locale
+- Migliorare latenza nel gioco
+- Offrire la possibilità di scegliere tra più versioni di gioco
 ## Conclusioni
 Il progetto finito attualmente funziona. Esso è solo una simulazione , di fatto il giochino è molto banale. 
 
-Però siamo riusciti a fare alcune cose molto interessanti : usare il Bluetooth sull' Arduino , cosa non semplice e che ha richiesto l' utilizzo di un adattatore. Altra cosa interessante è il fatto che ci siano 3 modi di giocare : sfruttando la comunicazione seriale col joystick, sfruttando la comunicazione bluetooth col joystick, direttamente da tastiera con WASD.
-Per il futuro le principali implementazioni da fare sono sul giochino in JS . Al momento è banale, è solo per far vedere che muoviamo qualcosa in base ai dati del joystick . Ma desideriamo ingrandirlo ancora molto.
+Però siamo riusciti a fare alcune cose molto interessanti : usare il Bluetooth sull' Arduino , cosa non semplice e che ha richiesto l' utilizzo di un adattatore. Altra cosa interessante è il fatto che ci siano 3 modi di giocare : sfruttando la comunicazione seriale col joystick,  bluetooth col joystick, direttamente da tastiera con WASD.
+Per il futuro le principali implementazioni da fare sono sul giochino in JS . Al momento è banale, è solo per far vedere che muoviamo qualcosa in base ai dati del joystick . Ma desideriamo ingrandirlo ancora molto, inserendo punteggi, tempi di gioco, possibilità di migliorare il personaggio ecc ecc.
