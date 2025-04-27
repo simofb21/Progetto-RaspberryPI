@@ -42,9 +42,9 @@ Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funzi
 
 
 ## Obiettivi del Progetto
-- **Obiettivo Principale**: L' obiettivo principale del nostro progetto è  consentire di giocare ad un minigame sia da tastiera ma soprattutto con un joystick.
+- **Obiettivo Principale**: L' obiettivo principale del nostro progetto è  consentire di giocare ad un minigame in cui il quadrato verde deve schivare i nemici , muovendosi in base alle direzioni fornite dall' utente.
 - **Obiettivi Specifici**:
-  1. Permettere di giocare sia a chi possiede un Arduino e un joystick di Arduino sia a chi non lo possiede
+  1. Permettere di giocare sia a chi possiede un Arduino e un joystick di Arduino sia a chi non lo possiede --> dual mode 
   2. Comunicazione bluetooth sfruttando l' Arduino(da vedere se si riesce a fare)..> in alternativa useremo solo comunicazione seriale
   3. Offrire una pagina web che interagisca con le richieste effettuate dai client
   4. Comunicazione tra pc e Server Raspberry PI
