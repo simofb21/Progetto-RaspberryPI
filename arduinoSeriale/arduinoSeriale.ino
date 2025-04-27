@@ -1,3 +1,6 @@
+/*
+Il seguente codice consente all' arduino di leggere i dati x e y di un joystick e di inviarli tramite seriale in formato JSON.
+*/
 int xAxisPin = 0; //  X pin Joystick
 int yAxisPin = 1; // pin y joystick
 

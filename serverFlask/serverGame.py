@@ -1,3 +1,6 @@
+'''
+server flask in esecuzione su raspberry, che riceve x, y da arduino via post, aggiorna  la pagina get_position , dove andrà js a leggere x,y
+'''
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)

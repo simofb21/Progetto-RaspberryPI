@@ -1,9 +1,11 @@
+#codice di prova usato solo per leggere i dati da bluetooth e stampare a video , eseguito sul pc windows
 import serial
 import json
 
-# Configura la porta seriale
+# Configura la porta seriale : assicurati di usare la porta corretta per il tuo dispositivo Bluetooth , se si usa windows è com5, o com7 ecc
+# se si usa linux o raspberry è /dev/ttyUSB0 o /dev/rfcomm0 ecc
 ser = serial.Serial(
-    port='COM5',  # Sostituisci con la porta corretta
+    port='COM5',  # sostituire  con la porta corretta
     baudrate=9600,        
     timeout=1            
 )
@@ -15,7 +17,7 @@ try:
         if ser.in_waiting > 0:
             try:
                 data = ser.readline().decode('utf-8').strip()
-                if data:  # Verifica se la stringa ricevuta non è vuota
+                if data:  # verifica se la stringa ricevuta non è vuota
                     print(f"Received: {data}")#stampa stringa ricevuta dal seriale
                     # decodifica la stringa JSON
                     try:

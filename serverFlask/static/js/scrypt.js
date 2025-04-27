@@ -1,4 +1,5 @@
-// Variabili globali per x e y
+//script per il gioco che viene eseguito nel browser
+// variabili globali per x e y
 let x = 0;
 let y = 0;
 let snakeSize = 25;

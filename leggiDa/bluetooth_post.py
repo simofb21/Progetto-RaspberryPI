@@ -1,8 +1,14 @@
+'''
+Questo script viene eseguito sul pc : legge i dati inviati tramite Bluetooth da Arduino e li invia a un server Flask in esecuzione su un altro computer.
+I dati devono essere in formato JSON e devono contenere le chiavi "X" e "Y" per rappresentare le coordinate.
+L' invio avviene tramite una richiesta POST al server Flask contente x,y in formato json.
+'''
 import serial
 import requests
 import json
 
-# Configura la porta seriale
+# Configura la porta seriale : assicurati di usare la porta corretta per il tuo dispositivo Bluetooth , se si usa windows è com5, o com7 ecc
+# se si usa linux o raspberry è /dev/ttyUSB0 o /dev/rfcomm0 ecc
 ser = serial.Serial(
     port='COM5', #tenere com 5 e collegare sulla prima porta del pc
     baudrate=9600,        
