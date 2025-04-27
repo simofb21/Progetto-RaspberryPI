@@ -34,7 +34,7 @@ Questo blocco verde si muove a seconda dei dati ricevuti dal Joystick . Ma funzi
          [POST request al Server]                                 │
                  │                                                │
      [Server Flask su Raspberry Pi]                               │
-                 │                                                 │
+                 │                                                │
                  ───────────────────── │ ──────────────────────────                    
                                        ▼
                             [Gioco Web (JavaScript)]
